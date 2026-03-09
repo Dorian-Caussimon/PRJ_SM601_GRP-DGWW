@@ -36,7 +36,7 @@ def afficher(graph):
             num_list[i].append(int(liste_arc[i][j]))
     print("num_list")
     print(num_list)
-    matrice= [[0 for i in range(int(graph.nb_sommet))]for j in range(int(graph.nb_sommet))]
+    matrice= [["-" for i in range(int(graph.nb_sommet))]for j in range(int(graph.nb_sommet))]
     print(matrice)
     for i in range(int(graph.nb_sommet)):
        for j in range(len(num_list)):
@@ -45,9 +45,47 @@ def afficher(graph):
            if num_list[j][0] == i:
                print("hit")
                matrice[i][num_list[j][1]]=num_list[j][2]
-           else:
-               print("miss")
-               matrice[i][num_list[j][1]]="-"
-    print(matrice)
+           #else:
+               #print("miss")
+               #print(num_list[j][1])
+               #matrice[i][num_list[j][1]]="-"
+    return matrice
+
+def adjacent(matrix):
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            if matrix[i][j] != "-":
+                matrix[i][j] = 1
+            else:
+                matrix[i][j] = 0
+    return matrix
+
+
+
+
+def algo_Floyd_Warshall(matrice,n):
+    L = [["∞" for i in range(n)] for j in range(n)]
+    P = [["-" for i in range(n)]for j in range(n)]
+    for i in range(n):
+        for j in range(n):
+            if matrice[i][j]!="-":
+                L[i][j]=matrice[i][j]
+            P[i][j]=i
+    for k in range(n):
+        for i in range(n):
+            for j in range(n):
+                if L[i][k]+L[k][j]<L[i][j]:
+                    L[i][j]=L[i][k]+L[k][j]
+                    P[i][j]=P[k][j]
+        affichage_mat(L,P)
+    return 0
+
+def affichage_mat(L,P):
+    a=0
+
+
+
+
+
 
 
