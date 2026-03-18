@@ -10,9 +10,14 @@ frame = Frame(window)
 
 titre=Label(frame,text="Projet graphe",bg="white",fg="black",font=("Times 20 bold",30))
 titre.pack()
+
 titre=Label(frame,text="choisissez un graphe",bg="white",fg="black",font=("Times 20 bold",30))
 titre.pack(expand="yes")
 frame.pack()
+button=Button(window, text="ok")
+button.configure(command=pp.click)
+button.pack()
+
 window.mainloop()
 graphe=pp.lecture(1)
 pp.afficher(graphe)

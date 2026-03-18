@@ -83,6 +83,12 @@ def algo_Floyd_Warshall(matrice,n):
 def affichage_mat(L,P):
     a=0
 
+def click():
+    print("click")
+    graphe=lecture(1)
+    afficher(graphe)
+
+
 
 
 
