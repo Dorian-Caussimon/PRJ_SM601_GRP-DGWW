@@ -63,13 +63,21 @@ def adjacent(matrix):
 
 
 
-def algo_Floyd_Warshall(matrice,n):
-    L = [["∞" for i in range(n)] for j in range(n)]
+def algo_Floyd_Warshall(matrice):
+    mat=matrice
+    for i in range(len(matrice)):
+        for j in range(len(matrice[i])):
+            if matrice[i][j] != "-":
+                mat[i][j] = int(matrice[i][j])
+            else:
+                mat[i][j] = 9999
+    n=len(matrice)
+    L = [[9999 for i in range(n)] for j in range(n)]
     P = [["-" for i in range(n)]for j in range(n)]
     for i in range(n):
         for j in range(n):
             if matrice[i][j]!="-":
-                L[i][j]=matrice[i][j]
+                L[i][j]=int(matrice[i][j])
             P[i][j]=i
     for k in range(n):
         for i in range(n):
@@ -77,16 +85,36 @@ def algo_Floyd_Warshall(matrice,n):
                 if L[i][k]+L[k][j]<L[i][j]:
                     L[i][j]=L[i][k]+L[k][j]
                     P[i][j]=P[k][j]
+        print("affichage énumération n°"+str(i))
         affichage_mat(L,P)
+    affichage_mat(L,P)
     return 0
 
 def affichage_mat(L,P):
-    a=0
+    print("affichage L")
+    M = [[0 for i in range(len(L))] for j in range(len(L))]
+
+    for i in range (len(L)):
+        for j in range (len(L[i])):
+            if L[i][j] >= 9000:
+                M[i][j]='∞'
+            else:
+                M[i][j]=L[i][j]
+    print(M)
+    #print("affichage vrai L")
+    #print(L)
+    print("affichage P")
+    print(P)
+
+
 
 def click():
     print("click")
-    graphe=lecture(1)
-    afficher(graphe)
+    graphe=lecture("1.txt")
+    a=afficher(graphe)
+    print(a)
+    b=algo_Floyd_Warshall(a)
+    print(b)
 
 
 

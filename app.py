@@ -19,5 +19,3 @@ button.configure(command=pp.click)
 button.pack()
 
 window.mainloop()
-graphe=pp.lecture(1)
-pp.afficher(graphe)
