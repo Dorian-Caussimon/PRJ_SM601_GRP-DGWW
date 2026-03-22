@@ -7,12 +7,12 @@ class Graph:
 
 def lecture(nb):
     newGraph=Graph()
-    with open("résultats"+str(nb)+".txt","w+") as g:
-        with open("graphes/"+str(nb),"r") as f:
+    #with open("résultats"+str(nb)+".txt","w+") as g:
+    with open("graphes/"+str(nb),"r") as f:
             a=0
 
             for line in f.readlines():
-                g.write(line)
+                #g.write(line)
                 if a == 0:
                     newGraph.nb_sommet=line[:len(line)-1]
                 if a == 1:
@@ -172,7 +172,10 @@ def interface(P, L):
 
         s = int(input("Sommet de départ : "))
         t = int(input("Sommet d'arrivée : "))
-
+        while(s<0 or s>len(P)-1 or t<0 or t>len(P)-1):
+            print("sommets imcompatibles")
+            s = int(input("Sommet de départ : "))
+            t = int(input("Sommet d'arrivée : "))
         if P[s][t] >9000:
             print("Pas de chemin")
         else:
@@ -186,6 +189,21 @@ def interfaceglobale():
     x=input()
     click(x)
 
+
+
+
+def test_graphes():
+    for i in range(13):
+        with open("résultats" + str(i+1) + ".txt", "w+") as g:
+            f=afficher(lecture(str(i+1)+".txt"))
+            a=np.array(f)
+            g.write("tableau d'adjacence du graphe")
+            g.write("\n"+str(a)+"\n")
+            g.write("affichage L")
+            b,c=np.array(algo_Floyd_Warshall(a))
+            g.write("\n"+str(b)+"\n")
+            g.write("affichage P")
+            g.write("\n"+str(c)+"\n")
+
+#test_graphes()
 interfaceglobale()
-
-
