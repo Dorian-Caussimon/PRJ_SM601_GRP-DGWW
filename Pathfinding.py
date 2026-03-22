@@ -206,4 +206,5 @@ def test_graphes():
             g.write("\n"+str(c)+"\n")
 
 #test_graphes()
+### si besoin d'avoir les résultats de tous les graphes il suffit de rajouter la fonction test_graphes()
 interfaceglobale()

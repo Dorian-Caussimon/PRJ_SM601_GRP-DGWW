@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c49db9b5-607d-4b05-a36b-6f48a5dd8715" name="Changes" comment="j'ai retiré l'interface graphique car trop complexe+ajout fonction chemin min">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pathfinding.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pathfinding.py" afterDir="false" />
-    </list>
+    <list default="true" id="c49db9b5-607d-4b05-a36b-6f48a5dd8715" name="Changes" comment="quelques trucs en plus" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,13 +98,22 @@
       <option name="project" value="LOCAL" />
       <updated>1774208827441</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="quelques trucs en plus">
+      <option name="closed" value="true" />
+      <created>1774211750506</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1774211750506</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="d'autres trucs" />
     <MESSAGE value="ajouts graphes et d'autres trucs" />
     <MESSAGE value="j'ai retiré l'interface graphique car trop complexe+ajout fonction chemin min" />
-    <option name="LAST_COMMIT_MESSAGE" value="j'ai retiré l'interface graphique car trop complexe+ajout fonction chemin min" />
+    <MESSAGE value="quelques trucs en plus" />
+    <option name="LAST_COMMIT_MESSAGE" value="quelques trucs en plus" />
   </component>
 </project>
